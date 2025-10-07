@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petros Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <nav>
+    <div class="logo">PETROS<span>DEV</span></div>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+   </nav>
+
+   <section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Hi, I'm <span> Petros Pieskä</span><br>Software Developer</h1>
+        <p>I create immersive digital experiences and software applications using modern programming languages and web technologies.</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-border"></div>
+        <div class="tech-icons">
+            <i class="tech-icon" style="top: 0; left: 50%;
+            transform: translateX(-50%);">💻</i>
+            <i class="tech-icon" style="top: 50%; right: 0;
+            transform: translateY(-50%);">⚛️</i>
+            <i class="tech-icon" style="bottom: 0; left: 50%;
+            transform: translateX(-50%);">🔌</i>
+            <i class="tech-icon" style="bottom: 50%; left: 0;
+            transform: translateY(-50%);">🎨</i>
+    </div>
+    <img src="petu.JPG" alt="Profile Picture" width="300px"
+    class="profile-pic">
+   </section>
+
+<!-- About Section-->
+   <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I’m an Information Technology student at Oulu University of Applied Sciences (OAMK), graduating between late 2025 and early 2026. I’m passionate about creating digital solutions that blend functionality, creativity, and good design.</p><br>
+                <p>Outside my studies, I actively develop my IT skills through personal and collaborative projects — constantly exploring new technologies and ways to improve my craft. When I’m not coding, you’ll probably find me on the track. I’ve been running track and field since a young age, which has taught me discipline, persistence, and balance — qualities I bring into my work as well.</p><br>
+                <p>I also believe in enjoying life, finding humor in everyday moments, and keeping a good dose of laughter in the mix. Maintaining a humane way of getting things done.</p>
+
+            </div>
+        <div class="skills">
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="95%"></div>   
+        </div>
+    </div>
+
+    <div class="skill-item">
+        <div class="skill-name">
+            <span>React</span>
+            <span>90%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-progress" data-width="90%"></div>
+        </div>
+    </div>
+
+     <div class="skill-item">
+        <div class="skill-name">
+            <span>Node.js</span>
+            <span>85%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-progress" data-width="85%"></div>
+        </div>
+    </div>
+
+    <div class="skill-item">
+        <div class="skill-name">
+            <span>UI/UX Design</span>
+            <span>80%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-progress" data-width="80%"></div>
+        </div>
+    </div>
+   </section>
+
+<!--Projects Section-->
+   <section class="projects" id="projects">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid">
+        <!--1st card-->
+        <div class="project-card">
+            <img src="integration.jpg" alt="Project 1" height="200px"
+            class="project-img">
+            <div class="project-info">
+                <h3 class="project-title">HR System Integration Demo</h3>
+                <p class="project-description">The demo illustrates the use of file-based data exchange (CSV, JSON) and an asynchronous process for integrating systems that cannot directly communicate.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET 8</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    <a href="#" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+            </div>
+        </div>
+    
+        <!--2nd card-->
+             <div class="project-card">
+            <img src="todo.jpg" alt="Project 2" height="200px"
+            class="project-img">
+            <div class="project-info">
+                <h3 class="project-title">Todo-App</h3>
+                <p class="project-description">A simple and intuitive Todo app.</p>
+                <div class="project-tech">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    <a href="#" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+            </div>
+        </div>
+    
+        <!--3rd card-->
+             <div class="project-card">
+            <img src="calculator.png" alt="Project 3" height="200px"
+            class="project-img">
+            <div class="project-info">
+                <h3 class="project-title">Calculator</h3>
+                <p class="project-description">Basic calculator application</p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Tkinter</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                    <a href="#" class="project-link"><i class="fa-brands fa-github"></i>Code</a>
+                </div>
+            </div>
+        </div>
+    </div>        
+</section>
+
+<!--Contact Section-->
+<section class="contact" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+
+    <form class="contact-form">
+
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-input" required>
+        </div>
+
+         <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-input" required>
+        </div>
+
+         <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" class="form-input" required>
+        </div>
+
+         <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-textarea" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</section>
+<!--Footer-->
+<footer>
+    <div class="social-links">
+        <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p class="copyright">© 2025 PetrosDev. All rights reserved.</p>
+</footer>    
+   <!-- Link to JS--> 
+   <script src="script.js"></script>
+   
+   <div class="toast-container"></div>
+
+</body>
+</html>
