@@ -16,7 +16,7 @@ A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It 
 ### Contact Section
 ![Contact](screenshots/contact.png)
 
-### Successful Message Submission
+### Successful Message Submission (DUE TO GITHUB PAGES SHOWING ONLY STATIC SITES, MESSAGES WILL NOT BE SENT)
 ![Message Sent](screenshots/messagesent.png)
 
 ### Responsive Design
