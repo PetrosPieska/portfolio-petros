@@ -1,6 +1,5 @@
 # Portfolio – Petros
-
-A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It showcases skills, projects, and a contact form using SendGrid for email handling.
+My personal portfolio to showcase my work and myself.
 
 ## Screenshots
 
@@ -24,7 +23,7 @@ A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It 
 
 ### Portfolio – Petros
 
-A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It features smooth animations, responsive design, and a working contact form (SendGrid-based on the backend).
+A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It features smooth animations, responsive design, and a working contact form (SendGrid-based on the backend. NOT WORKING ON GitHubPages).
 
 ## Features
 
