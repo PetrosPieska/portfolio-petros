@@ -1,6 +1,5 @@
 # Portfolio – Petros
-
-A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It showcases skills, projects, and a contact form using SendGrid for email handling.
+My personal portfolio to showcase my work and myself.
 
 ## Screenshots
 
@@ -16,7 +15,7 @@ A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It 
 ### Contact Section
 ![Contact](screenshots/contact.png)
 
-### Successful Message Submission
+### Successful Message Submission (DUE TO GITHUB PAGES SHOWING ONLY STATIC SITES, MESSAGES WILL NOT BE SENT)
 ![Message Sent](screenshots/messagesent.png)
 
 ### Responsive Design
@@ -24,7 +23,7 @@ A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It 
 
 ### Portfolio – Petros
 
-A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It features smooth animations, responsive design, and a working contact form (SendGrid-based on the backend).
+A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It features smooth animations, responsive design, and a working contact form (SendGrid-based on the backend. NOT WORKING ON GitHubPages).
 
 ## Features
 
@@ -44,12 +43,5 @@ The contact form is connected to a backend service using SendGrid to handle emai
 ## Note: For security reasons, the API key is not included in this repository. You’ll need to set up your own backend and API key if you wish to make the form functional.
 
 ### How to Use
-
-Clone the repository:
-
-git clone https://github.com/YourUsername/portfolio-petros.git
-
-
-Open the project in your editor.
-
-Launch index.html in a browser to preview.
+visit:
+https://petrospieska.github.io/portfolio-petros/
