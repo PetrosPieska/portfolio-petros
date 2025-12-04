@@ -298,7 +298,7 @@ nav {
 
 .about-text {
     margin-bottom: 1.5rem;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #ccc;
 }
 
@@ -327,7 +327,7 @@ nav {
     height: 100%;
     border-radius: 5px;
     background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
-    animation: fillBar 2s ease-out forwards;
+    animation: fillBar 2,5s ease-out forwards;
 }
 
 /*Projects section*/
