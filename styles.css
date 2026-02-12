@@ -418,8 +418,8 @@ nav {
 }
 
 .projects-grid {
-    display: inline-flex;
-    gap: 2rem;
+    display: flex;
+    gap: 5%;
     margin-top: 2rem;
 }    
 
@@ -665,6 +665,39 @@ footer {
   }
 
 }
+
+@media (max-width: 768px) {
+
+  .projects-grid {
+    display: flex !important;      /* override inline-flex */
+    flex-direction: column !important;
+    align-items: center;
+    max-width: 100%;
+    margin: 5%;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 10%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+}
+
+
 
 
 /*scrollbar*/
