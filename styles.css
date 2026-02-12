@@ -997,7 +997,7 @@ z-index: 5;
 .army-hero-text {
   position: absolute;
   bottom: 35%;
-  left: 25%;
+  left: 20%;
   z-index: 3;
   opacity: 0;
   border: none;
