@@ -12,11 +12,6 @@ My personal portfolio to showcase my work and myself.
 ### My Projects
 ![Projects](screenshots/myprojects.png)
 
-### Contact Section
-![Contact](screenshots/contact.png)
-
-### Successful Message Submission (DUE TO GITHUB PAGES SHOWING ONLY STATIC SITES, MESSAGES WILL NOT BE SENT)
-![Message Sent](screenshots/messagesent.png)
 
 ### Responsive Design
 ![Responsive Design](screenshots/responsive.gif)
@@ -33,14 +28,9 @@ Smooth scroll navigation
 
 Responsive layout for all screen sizes
 
-Contact form connected to a backend email service (SendGrid)
 
 Toast notifications for feedback
 
-### Contact Form
-
-The contact form is connected to a backend service using SendGrid to handle email submissions.
-## Note: For security reasons, the API key is not included in this repository. You’ll need to set up your own backend and API key if you wish to make the form functional.
 
 ### How to Use
 visit:
