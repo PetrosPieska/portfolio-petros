@@ -411,30 +411,48 @@ nav {
     background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
     animation: fillBar 2,5s ease-out forwards;
 }
-/*Projects section*/
+/* =========================
+   PROJECTS SECTION
+========================= */
+
 .projects {
     padding: 5rem 5%;
     position: relative;
 }
 
-.projects-grid {
+/* Snap slider */
+.projects-slider {
     display: flex;
-    gap: 5%;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     margin-top: 2rem;
-}    
-
-.project-card {
-    background-color: var(--dark-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    position: relative;
-    border: 1px solid #333;
+    padding-bottom: 1rem;
 }
 
+.projects-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Mobile default */
+.project-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    background-color: var(--dark-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+/* Neon hover */
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 136, 255, 0.2);
+    transform: translateY(-8px);
+    box-shadow:
+        0 0 15px var(--neon-blue),
+        0 0 30px rgba(83, 144, 217, 0.4);
     border: 1px solid var(--neon-blue);
 }
 
@@ -493,6 +511,21 @@ nav {
 .project-link:hover {
     color: var(--neon-pink);
 }
+
+/* Desktop layout */
+@media (min-width: 992px) {
+
+    .projects-slider {
+        justify-content: center;
+        overflow-x: visible;
+    }
+
+    .project-card {
+        flex: 0 0 30%;
+    }
+
+}
+
 
 /*Contact Section*/
 .contact {
