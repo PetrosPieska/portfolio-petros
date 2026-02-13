@@ -269,6 +269,37 @@ function updateCarousel() {
 
   updateCarousel();
 
+const sliderContainer = document.querySelector(".certificates-slider");
+
+let startX = 0;
+let endX = 0;
+
+if (sliderContainer) {
+
+  sliderContainer.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sliderContainer.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+  sliderContainer.addEventListener("touchend", () => {
+    const threshold = 50;
+    const diff = startX - endX;
+
+    if (diff > threshold) {
+      // Swipe left → next
+      index = (index + 1) % cards.length;
+      updateCarousel();
+    } else if (diff < -threshold) {
+      // Swipe right → previous
+      index = (index - 1 + cards.length) % cards.length;
+      updateCarousel();
+    }
+  });
+
+}
 
 
   /* =========================

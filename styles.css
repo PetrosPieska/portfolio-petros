@@ -730,6 +730,8 @@ footer {
 
 
 
+
+
 /*scrollbar*/
 
 ::-webkit-scrollbar {
@@ -1345,7 +1347,7 @@ z-index: 5;
     margin: auto;
   }
 
- 
+
 }
 
 
@@ -1392,6 +1394,13 @@ z-index: 5;
   }
 
 }
+
+@media (max-width: 768px) {
+  .cert-btn {
+    display: none;
+  }
+}
+
 
 
 
