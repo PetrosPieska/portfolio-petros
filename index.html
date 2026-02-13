@@ -119,19 +119,41 @@
 <section class="certificates">
   <h2 class="section-title">Certificates</h2>
 
-  <div class="slider">
-    <button class="slider-btn prev">&#10094;</button>
+  <div class="cert-carousel">
 
-    <div class="slides">
-      <img src="cybersecurity.png" class="slide active">
-      <img src="itsupport.png" class="slide">
-      <img src="marketing.png" class="slide">
-      <img src="uxdesign.png" class="slide">
+    <button class="cert-btn prev">&#10094;</button>
+
+    <div class="cert-track">
+
+      <div class="cert-card active">
+        <img src="cybersecurity.png" alt="Cybersecurity Certificate">
+      </div>
+
+      <div class="cert-card">
+        <img src="itsupport.png" alt="IT Support Certificate">
+      </div>
+
+      <div class="cert-card">
+        <img src="marketing.png" alt="Marketing Certificate">
+      </div>
+
+      <div class="cert-card">
+        <img src="uxdesign.png" alt="UX Design Certificate">
+      </div>
+
     </div>
 
-    <button class="slider-btn next">&#10095;</button>
+    <button class="cert-btn next">&#10095;</button>
+
   </div>
 </section>
+
+<!-- Fullscreen Modal -->
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-modal">&times;</span>
+  <img class="fullscreen-img" id="fullscreenImg">
+</div>
+
 
 <!-- Fullscreen Modal -->
 <div class="cert-modal" id="certModal">

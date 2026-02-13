@@ -198,84 +198,78 @@ document.addEventListener("DOMContentLoaded", () => {
     armyObserver.observe(armySection);
   }
 
-  /* =========================
-     CERTIFICATE SLIDER
-  ========================= */
-  const slides = document.querySelectorAll(".slide");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
+  // =========================
+// CERTIFICATE CAROUSEL
+// =========================
 
-  if (slides.length && prevBtn && nextBtn) {
 
-    let currentIndex = 0;
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove("active"));
-      slides[index].classList.add("active");
-    }
+  const cards = document.querySelectorAll(".cert-card");
+  const prev = document.querySelector(".cert-btn.prev");
+  const next = document.querySelector(".cert-btn.next");
+  const track = document.querySelector(".cert-track");
 
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    });
-
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    });
-
-    /* Swipe Support */
-    const slider = document.querySelector(".slides");
-
-    if (slider) {
-      let startX = 0;
-      let endX = 0;
-
-      slider.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-      });
-
-      slider.addEventListener("touchend", (e) => {
-        endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-        const threshold = 50;
-
-        if (diff > threshold) {
-          currentIndex = (currentIndex + 1) % slides.length;
-          showSlide(currentIndex);
-        } else if (diff < -threshold) {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          showSlide(currentIndex);
-        }
-      });
-    }
-  }
-
-  /* =========================
-     FULLSCREEN CERTIFICATE
-  ========================= */
   const modal = document.getElementById("fullscreenModal");
   const modalImg = document.getElementById("fullscreenImg");
   const closeModal = document.querySelector(".close-modal");
 
-  if (slides.length && modal && modalImg && closeModal) {
-    slides.forEach(slide => {
-      slide.addEventListener("click", function () {
-        modal.classList.add("active");
-        modalImg.src = this.src;
-      });
-    });
+  if (!cards.length) return;
 
-    closeModal.addEventListener("click", () => {
+  let index = 0;
+
+function updateCarousel() {
+  const cardWidth = cards[0].getBoundingClientRect().width;
+  const gap = parseFloat(getComputedStyle(track).gap) || 0;
+
+  const containerWidth = track.parentElement.offsetWidth;
+  const offset =
+    (containerWidth / 2) -
+    (cardWidth / 2) -
+    (index * (cardWidth + gap));
+
+  track.style.transform = `translateX(${offset}px)`;
+
+  // 🔥 REMOVE previous active
+  cards.forEach(card => card.classList.remove("active"));
+
+  // 🔥 SET new active
+  cards[index].classList.add("active");
+}
+
+
+
+  next.addEventListener("click", () => {
+    index = (index + 1) % cards.length;
+    updateCarousel();
+  });
+
+  prev.addEventListener("click", () => {
+    index = (index - 1 + cards.length) % cards.length;
+    updateCarousel();
+  });
+
+  // Click to fullscreen
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const img = card.querySelector("img");
+      modal.classList.add("active");
+      modalImg.src = img.src;
+    });
+  });
+
+  closeModal.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
       modal.classList.remove("active");
-    });
+    }
+  });
 
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-      }
-    });
-  }
+  updateCarousel();
+
+
 
   /* =========================
      HAMBURGER MENU
