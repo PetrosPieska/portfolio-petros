@@ -228,10 +228,7 @@ if (track && cards.length) {
     track.style.transform = `translateX(${offset}px)`;
   }
 
-  track.addEventListener("transitionend", () => {
-    cards.forEach(card => card.classList.remove("active"));
-    cards[index].classList.add("active");
-  });
+ 
 
   if (next) {
     next.addEventListener("click", () => {
@@ -293,6 +290,26 @@ if (track && cards.length) {
 
   updateCarousel();
   cards[0].classList.add("active");
+  window.addEventListener("resize", updateCarousel);
+
+function updateCarousel() {
+
+  const cardWidth = cards[0].offsetWidth;
+  const gap = parseFloat(getComputedStyle(track).gap);
+
+  const containerWidth = track.parentElement.offsetWidth;
+
+  const totalMove = index * (cardWidth + gap);
+
+  const centerOffset = (containerWidth - cardWidth) / 2;
+
+  track.style.transform =
+    `translateX(${centerOffset - totalMove}px)`;
+
+  cards.forEach(card => card.classList.remove("active"));
+  cards[index].classList.add("active");
+}
+
 }
 
 
