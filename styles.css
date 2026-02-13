@@ -1,4 +1,12 @@
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
 :root {
     --neon-blue: #5390d9;
     --neon-pink: #56cfe1;
@@ -1100,22 +1108,23 @@ z-index: 5;
   justify-content: center;
   overflow: hidden;
   padding: 0 5%;
+  overflow: hidden;
 }
 
 .cert-track {
   display: flex;
   gap: 2rem;
   transition: transform 0.5s ease;
+  touch-action: pan-y;
+  
 }
 
 .cert-card {
-  flex: 0 0 300px;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.5s ease;
+  min-width: 280px;
+  flex-shrink: 0;
   opacity: 0.5;
-  transform: scale(0.85);
-  cursor: pointer;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
 }
 
 .cert-card img {

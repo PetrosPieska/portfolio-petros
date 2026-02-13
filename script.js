@@ -198,57 +198,83 @@ document.addEventListener("DOMContentLoaded", () => {
     armyObserver.observe(armySection);
   }
 
-  // =========================
-// CERTIFICATE CAROUSEL
-// =========================
+/* =========================
+   CERTIFICATE CAROUSEL
+========================= */
 
+const track = document.querySelector(".cert-track");
+const cards = document.querySelectorAll(".cert-card");
+const prev = document.querySelector(".cert-btn.prev");
+const next = document.querySelector(".cert-btn.next");
 
+const modal = document.getElementById("fullscreenModal");
+const modalImg = document.getElementById("fullscreenImg");
+const closeModal = document.querySelector(".close-modal");
 
-  const cards = document.querySelectorAll(".cert-card");
-  const prev = document.querySelector(".cert-btn.prev");
-  const next = document.querySelector(".cert-btn.next");
-  const track = document.querySelector(".cert-track");
-
-  const modal = document.getElementById("fullscreenModal");
-  const modalImg = document.getElementById("fullscreenImg");
-  const closeModal = document.querySelector(".close-modal");
-
-  if (!cards.length) return;
+if (track && cards.length) {
 
   let index = 0;
 
-function updateCarousel() {
-  const cardWidth = cards[0].getBoundingClientRect().width;
-  const gap = parseFloat(getComputedStyle(track).gap) || 0;
+  function updateCarousel() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-  const containerWidth = track.parentElement.offsetWidth;
-  const offset =
-    (containerWidth / 2) -
-    (cardWidth / 2) -
-    (index * (cardWidth + gap));
+    const containerWidth = track.parentElement.offsetWidth;
+    const offset =
+      (containerWidth / 2) -
+      (cardWidth / 2) -
+      (index * (cardWidth + gap));
 
-  track.style.transform = `translateX(${offset}px)`;
+    track.style.transform = `translateX(${offset}px)`;
+  }
 
-  // 🔥 REMOVE previous active
-  cards.forEach(card => card.classList.remove("active"));
+  track.addEventListener("transitionend", () => {
+    cards.forEach(card => card.classList.remove("active"));
+    cards[index].classList.add("active");
+  });
 
-  // 🔥 SET new active
-  cards[index].classList.add("active");
-}
+  if (next) {
+    next.addEventListener("click", () => {
+      index = (index + 1) % cards.length;
+      updateCarousel();
+    });
+  }
 
+  if (prev) {
+    prev.addEventListener("click", () => {
+      index = (index - 1 + cards.length) % cards.length;
+      updateCarousel();
+    });
+  }
 
+  // Swipe
+  let startX = 0;
+  let endX = 0;
 
-  next.addEventListener("click", () => {
-    index = (index + 1) % cards.length;
+  track.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener("touchend", () => {
+    const threshold = 50;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) < threshold) return;
+
+    if (diff > 0) {
+      index = (index + 1) % cards.length;
+    } else {
+      index = (index - 1 + cards.length) % cards.length;
+    }
+
     updateCarousel();
   });
 
-  prev.addEventListener("click", () => {
-    index = (index - 1 + cards.length) % cards.length;
-    updateCarousel();
-  });
-
-  // Click to fullscreen
+  // Modal
   cards.forEach(card => {
     card.addEventListener("click", () => {
       const img = card.querySelector("img");
@@ -257,49 +283,18 @@ function updateCarousel() {
     });
   });
 
-  closeModal.addEventListener("click", () => {
+  closeModal?.addEventListener("click", () => {
     modal.classList.remove("active");
   });
 
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("active");
-    }
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.remove("active");
   });
 
   updateCarousel();
-
-const sliderContainer = document.querySelector(".certificates-slider");
-
-let startX = 0;
-let endX = 0;
-
-if (sliderContainer) {
-
-  sliderContainer.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  sliderContainer.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-  });
-
-  sliderContainer.addEventListener("touchend", () => {
-    const threshold = 50;
-    const diff = startX - endX;
-
-    if (diff > threshold) {
-      // Swipe left → next
-      index = (index + 1) % cards.length;
-      updateCarousel();
-    } else if (diff < -threshold) {
-      // Swipe right → previous
-      index = (index - 1 + cards.length) % cards.length;
-      updateCarousel();
-    }
-  });
-
+  cards[0].classList.add("active");
 }
+
 
 
   /* =========================
@@ -315,3 +310,4 @@ if (sliderContainer) {
   }
 
 });
+
