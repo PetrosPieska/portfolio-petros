@@ -325,6 +325,46 @@ function updateCarousel() {
       navLinks.classList.toggle("active");
     });
   }
+/* =========================
+   PROJECTS SLIDER FIXED
+========================= */
 
+const projectsTrack = document.querySelector(".projects-slider");
+const projectCards = document.querySelectorAll(".project-card");
+const projectsPrev = document.querySelector(".projects-btn.prev");
+const projectsNext = document.querySelector(".projects-btn.next");
+
+if (projectsTrack && projectCards.length > 3) {
+
+  let projectIndex = 0;
+
+  function updateProjectsCarousel() {
+
+    const cardWidth = projectCards[0].offsetWidth;
+    const gap = parseFloat(getComputedStyle(projectsTrack).gap) || 0;
+
+    const moveAmount = projectIndex * (cardWidth + gap);
+
+    projectsTrack.style.transform = `translateX(-${moveAmount}px)`;
+  }
+
+  projectsNext?.addEventListener("click", () => {
+    projectIndex++;
+    if (projectIndex > projectCards.length - 3) {
+      projectIndex = 0;
+    }
+    updateProjectsCarousel();
+  });
+
+  projectsPrev?.addEventListener("click", () => {
+    projectIndex--;
+    if (projectIndex < 0) {
+      projectIndex = projectCards.length - 3;
+    }
+    updateProjectsCarousel();
+  });
+
+  updateProjectsCarousel();
+}
 });
 

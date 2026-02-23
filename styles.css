@@ -526,7 +526,7 @@ nav {
     }
 
     .project-card {
-        flex: 0 0 30%;
+        flex: 0 0 20%;
     }
 
 }
@@ -1460,7 +1460,41 @@ z-index: 5;
 }
 
 
+@media (min-width: 992px) {
 
+  .projects-carousel {
+    overflow: hidden;
+  }
 
+  .projects-slider {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+  }
+
+ 
+
+}
+
+/* Mobile default */
+@media (max-width: 991px) {
+
+  .projects-slider {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .project-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+}
+
+.projects-carousel {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
 
