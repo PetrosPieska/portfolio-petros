@@ -1,37 +1,54 @@
-# Portfolio – Petros
-My personal portfolio to showcase my work and myself.
+# 🚀 Portfolio – Petros Pieskä
 
-## Screenshots
+🌐 **Live Site:**  
+👉 https://petrospieska.github.io/portfolio-petros/
 
-### Home
-![Home](screenshots/home.png)
+---
 
-### About Me
-![About Me](screenshots/aboutme.png)
+## 📌 Overview
 
-### My Projects
-![Projects](screenshots/myprojects.png)
+This is my personal developer portfolio built to showcase my technical skills, projects, and design approach.
+
+The goal of this portfolio is not only to present my work, but also to reflect my ability to build clean, responsive, and interactive user interfaces with attention to detail and user experience.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- HTML5  
+- CSS3  
+- JavaScript (ES6+)  
+
+### Design & UI
+- Custom animations  
+- Responsive layout (mobile-first approach)  
+- Smooth scrolling navigation  
+- Interactive project cards  
+- Dynamic skill bars  
+
+---
+
+## ✨ Features
+
+- ✅ Fully responsive design  
+- ✅ Smooth navigation between sections  
+- ✅ Animated skill indicators  
+- ✅ Project showcase section  
+- ✅ Modern dark UI theme  
+- ✅ Clean and structured layout  
+- ⚠ Contact form requires backend (not functional on GitHub Pages)  
+
+---
 
 
-### Responsive Design
-![Responsive Design](screenshots/responsive.gif)
+## 🎯 Purpose
 
-### Portfolio – Petros
+This portfolio represents my development philosophy:
 
-A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. It features smooth animations, responsive design, and a working contact form (SendGrid-based on the backend. NOT WORKING ON GitHubPages).
+- Clean structure over unnecessary complexity  
+- Functionality combined with strong visual presentation  
+- Attention to performance and responsiveness  
+- Continuous improvement and iteration  
 
-## Features
-
-Animated skill bars
-
-Smooth scroll navigation
-
-Responsive layout for all screen sizes
-
-
-Toast notifications for feedback
-
-
-### How to Use
-visit:
-https://petrospieska.github.io/portfolio-petros/
+---
