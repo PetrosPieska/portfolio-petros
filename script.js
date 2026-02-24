@@ -368,3 +368,42 @@ if (projectsTrack && projectCards.length > 3) {
 }
 });
 
+const texts = [
+  "A Graduating Software Developer",
+  "Athlete",
+  "Car Enthusiast",
+  "Clean Freak",
+  
+];
+
+const typeElement = document.getElementById("typewriter");
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const currentText = texts[textIndex];
+
+  if (!isDeleting) {
+    typeElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentText.length) {
+      setTimeout(() => isDeleting = true, 1200);
+    }
+  } else {
+    typeElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+    }
+  }
+
+  const speed = isDeleting ? 20 : 40;
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();

@@ -106,6 +106,28 @@ nav {
 
 }
 
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #4cc9f0, #3a86ff);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 100px rgba(76, 201, 240, 0.6);
+}
+
 
 
 .nav-links a {
@@ -221,48 +243,14 @@ nav {
 .profile-pic {
     width: 300px;
     height: 300px;
-    border-radius: 50%;
+    border-radius:50%;
     object-fit: cover;
-    border: 5px solid transparent;
-    box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-purple), 0 0 60px var(--neon-pink);
-    animation:  glow 4s ease-in-out infinite alternate, float 6s ease-in-out infinite;
-    z-index: 1;
+    border: 3px solid transparent;
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 10px var(--neon-purple), 0 0 50px var(--neon-pink);
+    
 }
 
-.profile-border {
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    border: 2px dashed var(--neon-green);
-    animation: spin 20s linear infinite;
-}
 
-.profile-border::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 50%;
-    border: 2px dashed var(--neon-blue);
-    animation: spin 15s linear infinite reverse;
-}
-
-.tech-icons {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    animation: spin 30s linear infinite;
-}
-
-.tech-icon {
-    position: absolute;
-    font-size: 1.5rem;
-    color: var(--neon-green);
-    filter: drop-shadow(0 0 5px var(--neon-green));
-}
 
     /*Animations*/
 @keyframes gradientShift {
@@ -532,67 +520,7 @@ nav {
 }
 
 
-/*Contact Section*/
-.contact {
-    padding: 5rem 5%;
-    background-color: var(--darker-bg);
-    position: relative;
-}
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-label {
-    font-weight: 500;
-}
-
-.form-input, .form-textarea {
-    padding: 0.8rem 1rem;
-    background-color: #222;
-    border: 1px solid #333;
-    border-radius: 5px;
-    color: white;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus, .form-textarea:focus {
-    outline: none;
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 10px rgba(0, 136, 255, 0.3);
-}
-
-.form-textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.submit-btn {
-    background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 136, 255, 0.5)
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(0, 136, 255, 0.5);
-}
 
 footer {
   display: flex;
@@ -601,7 +529,7 @@ footer {
 }
 
 
-/* Siirrä koko some-ryhmää, EI yksittäisiä linkkejä */
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -657,11 +585,11 @@ footer {
     .profile-container {
         width: 300px;
         height: 300px;
+        display: flex;
     }
 
     .profile-pic {
-        width: 250px;
-        height: 250px;
+        display: flex;
     }
     .profile-border {
         width: 270px;
@@ -803,6 +731,18 @@ footer {
 }
 
 /* Animations */
+  #typewriter::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 0.8s infinite;
+  color: #4cc9f0;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 
 
@@ -1108,32 +1048,36 @@ z-index: 5;
   
 }
 
-
 .cert-track {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
   transition: transform 0.5s ease;
+  transform: scale(1);
 }
 
 .cert-card {
-  flex: 0 0 480px;   /* TÄRKEÄ */
+  flex: 0 0 50%; 
   opacity: 0.4;
-  transform: scale(0.85);
+  transform: scale(0.5);
   transition: all 0.4s ease;
+  overflow: hidden;
 }
 
 .cert-card img {
   width: 100%;
   display: block;
   border-radius: 20px;
+  
 }
 
 /* Center active card */
 .cert-card.active {
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 30px rgba(0, 136, 255, 0.4);
+  border-radius: 20px;
+
 }
 
 /* Buttons */
@@ -1487,6 +1431,10 @@ z-index: 5;
   .project-card {
     flex: 0 0 85%;
     scroll-snap-align: center;
+  }
+
+  .hero-buttons {
+    margin-bottom: 25%;
   }
 
 }
